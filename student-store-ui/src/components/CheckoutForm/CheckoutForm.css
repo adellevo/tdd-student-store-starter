@@ -1,0 +1,22 @@
+.payment-header {
+    margin-bottom: 1em;
+}
+
+/* .checkout-form {
+    margin-left: -1em;
+} */
+
+form {
+    display: flex;
+    flex-direction: row;
+}
+
+form>* {
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+button {
+    width: fit-content;
+    min-width: 6em;
+}

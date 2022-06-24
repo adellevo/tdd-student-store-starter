@@ -1,0 +1,16 @@
+.spacer {
+    width: 10em;
+    /* background-color: aliceblue; */
+}
+
+.label {
+    white-space: nowrap;
+    width: 12em;
+    margin-right: 10em;
+    margin-left: 2em;
+}
+
+.receipt>* {
+    display: flex;
+    flex-direction: row;
+}

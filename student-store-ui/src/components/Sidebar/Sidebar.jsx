@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./Sidebar.css";
-import arrow from "./arrow.svg";
+import sidebarIcon from "./shopping-cart.svg";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import CheckoutSuccess from "../CheckoutSuccess/CheckoutSuccess";
@@ -50,7 +50,7 @@ export default function Sidebar({
   return (
     <section className="sidebar">
       <button className="toggle-button" onClick={handleOnToggle}>
-        <img src={arrow} />
+        <img src={sidebarIcon} />
       </button>
       {isOpen && (
         <>

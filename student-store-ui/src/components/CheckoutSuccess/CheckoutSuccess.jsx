@@ -5,24 +5,31 @@ export default function CheckoutSuccess(props) {
     <div className="checkout-success">
       <h3>Checkout Info</h3>
       <h4>Receipt</h4>
-
       <p>
         Showing receipt for {props.checkoutForm.name} available at{" "}
         {props.checkoutForm.email}{" "}
       </p>
       <ul>
-        {props.shoppingCart.map((product) => (
-          <li key={product.itemId}>
-            {product.quantity} total {props.getProductName(product.itemId)}{" "}
-            purchased at a cost of {props.getProductPrice(product.itemId)} for a
-            total cost of{" "}
-            {props.calculateCost(product.quantity, product.itemId)}.
-          </li>
-        ))}
-        <li>Before taxes, the subtotal was {props.calculateSubtotal()}</li>
+        {props.shoppingCart.map(
+          (product) =>
+            product.quantity > 0 && (
+              <li key={product.itemId}>
+                {product.quantity} total {props.getProductName(product.itemId)}{" "}
+                purchased at a cost of $
+                {props.getProductPrice(product.itemId).toFixed(2)} for a total
+                cost of $
+                {props
+                  .calculateCost(product.quantity, product.itemId)
+                  .toFixed(2)}
+              </li>
+            )
+        )}
         <li>
-          After taxes and fees were applied, the total comes out to{" "}
-          {props.calculateTotal()}
+          Before taxes, the subtotal was ${props.calculateSubtotal().toFixed(2)}
+        </li>
+        <li>
+          After taxes and fees were applied, the total comes out to $
+          {props.calculateTotal().toFixed(2)}
         </li>
       </ul>
 

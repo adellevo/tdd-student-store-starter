@@ -3,8 +3,11 @@
     flex-direction: column;
     height: fit-content;
     justify-content: space-between;
+    align-items: center;
     background-color: white;
     border-radius: 1em;
+    width: fit-content;
+    min-width: 25em;
 }
 
 .product-card img {

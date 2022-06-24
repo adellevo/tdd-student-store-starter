@@ -5,11 +5,12 @@
 }
 
 .category-menu p {
-    font-size: 1.8em;
+    font-size: 1.2em;
     font-weight: 500;
     cursor: pointer;
-    border: 3px solid rgb(63, 42, 68);
-    color: rgb(63, 42, 68);
-    padding: 0.5em;
+    border: 3px solid rgb(91, 89, 91);
+    color: rgb(91, 89, 91);
+    padding: 0.8em;
     margin: 0 0.2em;
+    border-radius: 2em;
 }

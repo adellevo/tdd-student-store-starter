@@ -1,14 +1,37 @@
+html,
+body {
+    margin: 0;
+}
+
 .sidebar {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    justify-items: center;
     z-index: 10;
     /* background: white; */
-    background-color: transparent;
+    background-color: rgb(255, 254, 254);
     width: fit-content;
-    height: 100vh;
+    /* width: 40px; */
+    /* width: fit-content; */
+    height: 350em;
+    padding: 3em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .sidebar img {
-    transform: rotate(90deg);
+    margin-left: -0.6em;
+    width: 3em;
+    background-color: none;
+}
+
+.toggle-button {
+    /* background-color: black; */
+    border: none;
+    color: white;
+}
+
+.toggle-button:hover {
+    background-color: rgb(229, 239, 247);
+    border-radius: 5em;
 }

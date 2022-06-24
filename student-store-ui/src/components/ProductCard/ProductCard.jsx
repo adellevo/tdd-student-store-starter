@@ -21,7 +21,7 @@ export default function ProductCard({
       <div className="header">
         <div className="text-container">
           <h3 className="product-name">{product.name}</h3>
-          <p className="product-price">${product.price}</p>
+          <p className="product-price">${product.price.toFixed(2)}</p>
           <Rating readonly initialValue={4} />
           {quantity > 0 && (
             <p className="product-quantity">Quantity: {quantity}</p>

@@ -1,10 +1,11 @@
 import React from "react";
+import "./CheckoutForm.css";
 
 export default function CheckoutForm(props) {
   return (
     <div className="checkout-form">
       <div>
-        <h3>Payment Info</h3>
+        <h3 className="payment-header">Payment Info</h3>
       </div>
       <form>
         <input

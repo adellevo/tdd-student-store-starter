@@ -1,27 +1,23 @@
 import React from "react";
+import "./Receipt.css";
 
 export default function Receipt(props) {
   return (
     <div className="receipt">
       <div className="receipt-subtotal">
-        <span className="label">Subtotal</span>
-        <span></span>
-        <span></span>
-        <span className="subtotal">{props.calculateSubtotal().toFixed(2)}</span>
+        <p className="label">Subtotal</p>
+        <p className="spacer"></p>
+        <p className="subtotal">${props.calculateSubtotal().toFixed(2)}</p>
       </div>
       <div className="receipt-taxes">
-        <span className="label">Taxes and Fees</span>
-        <span></span>
-        <span></span>
-        <span className="taxes-and-fees">
-          {props.calculateTaxes().toFixed(2)}
-        </span>
+        <p className="label">Taxes and Fees</p>
+        <p className="spacer"></p>
+        <p className="taxes-and-fees">${props.calculateTaxes().toFixed(2)}</p>
       </div>
       <div className="receipt-total">
-        <span className="label">Total</span>
-        <span></span>
-        <span></span>
-        <span className="total-price">{props.calculateTotal().toFixed(2)}</span>
+        <p className="label">Total</p>
+        <p className="spacer"></p>
+        <p className="total-price">${props.calculateTotal().toFixed(2)}</p>
       </div>
     </div>
   );
