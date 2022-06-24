@@ -167,17 +167,6 @@ export default function App() {
                 />
               }
             />
-            <Route
-              path="/products/:productId"
-              element={
-                <ProductDetail
-                  shoppingCart={shoppingCart}
-                  handleAddItemToCart={handleAddItemToCart}
-                  handleRemoveItemToCart={handleRemoveItemToCart}
-                  setError={setError}
-                />
-              }
-            />
             <Route path="/*" element={<NotFound />} />
           </Routes>
         </main>

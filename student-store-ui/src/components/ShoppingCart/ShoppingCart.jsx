@@ -44,7 +44,7 @@ export default function ShoppingCart({ isOpen, products, shoppingCart }) {
     <div className="shopping-cart">
       {isOpen && (
         <div className="cart-table">
-          <div className="open">
+          <div>
             <h3>Shopping Cart</h3>
           </div>
           <div className="header">
@@ -69,28 +69,6 @@ export default function ShoppingCart({ isOpen, products, shoppingCart }) {
               </div>
             </div>
           ))}
-          <div className="receipt">
-            <div className="receipt-subtotal">
-              <span className="label">Subtotal</span>
-              <span></span>
-              <span></span>
-              <span className="subtotal">{calculateSubtotal().toFixed(2)}</span>
-            </div>
-            <div className="receipt-taxes">
-              <span className="label">Taxes and Fees</span>
-              <span></span>
-              <span></span>
-              <span className="taxes-and-fees">
-                {calculateTaxes().toFixed(2)}
-              </span>
-            </div>
-            <div className="receipt-total">
-              <span className="label">Total</span>
-              <span></span>
-              <span></span>
-              <span className="total-price">{calculateTotal().toFixed(2)}</span>
-            </div>
-          </div>
         </div>
       )}
     </div>
