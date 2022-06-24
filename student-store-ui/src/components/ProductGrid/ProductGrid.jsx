@@ -4,6 +4,8 @@ import "./ProductGrid.css";
 import CategoryMenu from "../CategoryMenu/CategoryMenu";
 import Search from "../Search/Search";
 import NotFound from "../NotFound/NotFound";
+import About from "../About/About";
+import Contact from "../Contact/Contact";
 
 export default function ProductGrid({
   products,
@@ -27,9 +29,11 @@ export default function ProductGrid({
 
   return (
     <div className="products-container">
-      <Search setSearchQuery={setSearchQuery} />
-      <CategoryMenu setCategory={setCategory} />
-      <h1 className="header">Best Selling Products</h1>
+      <div className="filters">
+        <Search setSearchQuery={setSearchQuery} />
+        <CategoryMenu setCategory={setCategory} />
+      </div>
+      {/* <h1 className="header">Best Selling Products</h1> */}
       <div className="product-grid">
         {filteredProducts.length == 0 ? (
           <NotFound />
@@ -47,6 +51,8 @@ export default function ProductGrid({
           ))
         )}
       </div>
+      <About />
+      <Contact />
     </div>
   );
 }

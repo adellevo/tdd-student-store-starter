@@ -2,7 +2,7 @@ import * as React from "react";
 import Contact from "../Contact/Contact";
 import Hero from "../Hero/Hero";
 import ProductGrid from "../ProductGrid/ProductGrid";
-import Search from "../Search/Search";
+import About from "../About/About";
 import "./Home.css";
 
 export default function Home({
@@ -28,7 +28,6 @@ export default function Home({
         setCategory={setCategory}
         category={category}
       />
-      <Contact />
     </div>
   );
 }

@@ -3,7 +3,7 @@
 } */
 
 .hero {
-    background: rgb(63, 42, 68);
+    background: rgb(61, 80, 103);
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -17,7 +17,8 @@
     width: 10em;
 }
 
-h1, h2 {
+h1,
+h2 {
     color: white;
 }
 

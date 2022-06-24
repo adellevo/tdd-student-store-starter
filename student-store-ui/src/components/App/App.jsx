@@ -19,6 +19,7 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [shoppingCart, setShoppingCart] = useState([]);
   const [category, setCategory] = useState("");
+  const [isCheckedOut, setCheckedOut] = useState(false);
 
   const findQuantity = (productId) => {
     for (let i = 0; i < shoppingCart.length; i++) {
@@ -106,6 +107,7 @@ export default function App() {
       })
       .then(function (response) {
         console.log(response);
+        setCheckedOut(true);
       })
       .catch(function (err) {
         setError(err);
@@ -117,7 +119,6 @@ export default function App() {
       const response = await axios.get(
         "https://codepath-store-api.herokuapp.com/store"
       );
-      //
       setProducts(response.data.products);
       setIsFetching(true);
     } catch (err) {
@@ -139,6 +140,7 @@ export default function App() {
             handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
             findQuantity={findQuantity}
             handleOnToggle={() => setIsOpen(!isOpen)}
+            isCheckedOut={isCheckedOut}
           />
           <Routes>
             <Route

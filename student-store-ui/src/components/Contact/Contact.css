@@ -1,13 +1,14 @@
 .contact {
-    background: rgb(63, 42, 68);
+    background: rgb(61, 80, 103);
     color: white;
     padding: 2em;
     font-size: 2em;
     font-size: 1.2em;
     width: 100%;
+    margin-top: 3em;
 }
 
-.contact > li {
+.contact>li {
     list-style: none;
     margin-bottom: 0.1em;
 }
@@ -28,10 +29,13 @@
 .contact .header {
     font-size: 1.8em;
     color: white;
+    justify-content: flex-start;
 }
 
 .contact-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-items: flex-start;
+    font-size: 1.1em;
 }

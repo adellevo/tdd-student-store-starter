@@ -1,0 +1,23 @@
+.about {
+    padding: 3em 4em;
+    background-color: rgb(244, 224, 224);
+    color: rgb(76, 35, 35);
+    margin-top: 3em;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.about h3 {
+    font-size: 2em;
+}
+
+.about p {
+    font-size: 1.4em;
+    line-height: 1.6em;
+    padding-right: 2.5em;
+    font-weight: 400;
+}

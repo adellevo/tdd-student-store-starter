@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import "./Search.css";
 
 export default function Search({ setSearchQuery }) {
   return (
-    <label>
-      <input
-        type="text"
-        name="search"
-        placeholder="Search"
-        onChange={(e) => setSearchQuery(e.target.value.toLowerCase())}
-      />
-      {/* <input type="submit" value="Submit" /> */}
-    </label>
+    <input
+      className="search"
+      type="text"
+      name="search"
+      placeholder="Search"
+      onChange={(e) => setSearchQuery(e.target.value.toLowerCase())}
+    />
   );
 }

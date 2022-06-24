@@ -3,7 +3,6 @@
     grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
     justify-items: center;
     gap: 30px;
-    padding: 3em;
     width: 100%;
 }
 
@@ -19,5 +18,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2em;
 }
 
+.products-container {
+    background-color: rgb(243, 243, 243);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em;
+}
+
+.products-container>* {
+    border-radius: 2em;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(228, 230, 236);
+    border-radius: 1em;
+    padding: 2em;
+    padding-bottom: 0;
+    margin-top: -2em;
+    margin-bottom: 3em;
+    width: 100%;
+}

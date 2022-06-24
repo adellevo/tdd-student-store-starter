@@ -13,6 +13,7 @@ export default function Sidebar({
   handleOnCheckoutFormChange,
   handleOnSubmitCheckoutForm,
   handleOnToggle,
+  isCheckedOut,
 }) {
   const getProductName = (productId) => {
     return products.find((product) => product.id == productId).name;
@@ -34,7 +35,6 @@ export default function Sidebar({
         shoppingCart[i].quantity,
         shoppingCart[i].itemId
       );
-      console.log(subtotal);
     }
     return subtotal;
   };
@@ -73,6 +73,13 @@ export default function Sidebar({
           <CheckoutSuccess
             shoppingCart={shoppingCart}
             checkoutForm={checkoutForm}
+            getProductName={getProductName}
+            getProductPrice={getProductPrice}
+            calculateCost={calculateCost}
+            calculateSubtotal={calculateSubtotal}
+            calculateTaxes={calculateTaxes}
+            calculateTotal={calculateTotal}
+            isCheckedOut={isCheckedOut}
           />
         </>
       )}
