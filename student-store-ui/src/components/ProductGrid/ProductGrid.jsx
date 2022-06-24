@@ -3,6 +3,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import "./ProductGrid.css";
 import CategoryMenu from "../CategoryMenu/CategoryMenu";
 import Search from "../Search/Search";
+import NotFound from "../NotFound/NotFound";
 
 export default function ProductGrid({
   products,
@@ -30,17 +31,21 @@ export default function ProductGrid({
       <CategoryMenu setCategory={setCategory} />
       <h1 className="header">Best Selling Products</h1>
       <div className="product-grid">
-        {filteredProducts.map((product, index) => (
-          <ProductCard
-            key={index}
-            product={product}
-            productId={product.id}
-            quantity={findQuantity(product.id)}
-            handleAddItemToCart={handleAddItemToCart}
-            handleRemoveItemToCart={handleRemoveItemToCart}
-            showDescription={false}
-          />
-        ))}
+        {filteredProducts.length == 0 ? (
+          <NotFound />
+        ) : (
+          filteredProducts.map((product, index) => (
+            <ProductCard
+              key={index}
+              product={product}
+              productId={product.id}
+              quantity={findQuantity(product.id)}
+              handleAddItemToCart={handleAddItemToCart}
+              handleRemoveItemToCart={handleRemoveItemToCart}
+              showDescription={false}
+            />
+          ))
+        )}
       </div>
     </div>
   );

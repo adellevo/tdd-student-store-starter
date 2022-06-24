@@ -12,7 +12,6 @@ export default function Home({
   shoppingCart,
   findQuantity,
   setProducts,
-  originalProducts,
   setCategory,
   category,
 }) {
@@ -26,7 +25,6 @@ export default function Home({
         shoppingCart={shoppingCart}
         findQuantity={findQuantity}
         setProducts={setProducts}
-        originalProducts={originalProducts}
         setCategory={setCategory}
         category={category}
       />

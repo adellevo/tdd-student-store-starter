@@ -9,11 +9,12 @@ import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import Search from "../Search/Search";
 import ProductDetail from "../ProductDetail/ProductDetail";
+import NotFound from "../NotFound/NotFound";
 
 export default function App() {
   const [products, setProducts] = useState([]);
-  const [originalProducts, setOriginalProducts] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
+  const [error, setError] = useState("");
   const [checkoutForm, setCheckoutForm] = useState({});
   const [isOpen, setIsOpen] = useState(false);
   const [shoppingCart, setShoppingCart] = useState([]);
@@ -85,12 +86,10 @@ export default function App() {
       const response = await axios.get(
         "https://codepath-store-api.herokuapp.com/store"
       );
-      //
       setProducts(response.data.products);
       setIsFetching(true);
-      setOriginalProducts(response.data.products);
-    } catch (error) {
-      setCheckoutForm(setIsFetching(false));
+    } catch (err) {
+      setError(err);
     }
   }, []);
 
@@ -108,8 +107,8 @@ export default function App() {
       .then(function (response) {
         console.log(response);
       })
-      .catch(function (error) {
-        console.log(error);
+      .catch(function (err) {
+        setError(err);
       });
   };
 
@@ -121,9 +120,8 @@ export default function App() {
       //
       setProducts(response.data.products);
       setIsFetching(true);
-      setOriginalProducts(response.data.products);
-    } catch (error) {
-      setCheckoutForm(setIsFetching(false));
+    } catch (err) {
+      setError(err);
     }
   }, []);
 
@@ -131,34 +129,31 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <main>
+          <Navbar />
+          <Sidebar
+            isOpen={isOpen}
+            shoppingCart={shoppingCart}
+            products={products}
+            checkoutForm={checkoutForm}
+            handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+            findQuantity={findQuantity}
+            handleOnToggle={() => setIsOpen(!isOpen)}
+          />
           <Routes>
             <Route
-              path="/*"
+              path="/"
               element={
-                <>
-                  <Navbar />
-                  <Sidebar
-                    isOpen={isOpen}
-                    shoppingCart={shoppingCart}
-                    products={products}
-                    checkoutForm={checkoutForm}
-                    handleOnCheckoutFormChange={handleOnCheckoutFormChange}
-                    handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
-                    findQuantity={findQuantity}
-                    handleOnToggle={() => setIsOpen(!isOpen)}
-                  />
-                  <Home
-                    products={products}
-                    handleAddItemToCart={handleAddItemToCart}
-                    handleRemoveItemToCart={handleRemoveItemToCart}
-                    shoppingCart={shoppingCart}
-                    findQuantity={findQuantity}
-                    setProducts={setProducts}
-                    originalProducts={originalProducts}
-                    setCategory={setCategory}
-                    category={category}
-                  />
-                </>
+                <Home
+                  products={products}
+                  handleAddItemToCart={handleAddItemToCart}
+                  handleRemoveItemToCart={handleRemoveItemToCart}
+                  shoppingCart={shoppingCart}
+                  findQuantity={findQuantity}
+                  setProducts={setProducts}
+                  setCategory={setCategory}
+                  category={category}
+                />
               }
             />
             <Route
@@ -172,22 +167,21 @@ export default function App() {
                 />
               }
             />
+            <Route
+              path="/products/:productId"
+              element={
+                <ProductDetail
+                  shoppingCart={shoppingCart}
+                  handleAddItemToCart={handleAddItemToCart}
+                  handleRemoveItemToCart={handleRemoveItemToCart}
+                  setError={setError}
+                />
+              }
+            />
+            <Route path="/*" element={<NotFound />} />
           </Routes>
         </main>
       </BrowserRouter>
     </div>
   );
 }
-
-// function Nav() {
-//   return <div>
-//     <Link to="/">Home</Link>
-//     <Link to="/about">About</Link>
-//   </div>
-// }
-
-// <div className="App">
-//   return (
-
-//   )
-// </div>
