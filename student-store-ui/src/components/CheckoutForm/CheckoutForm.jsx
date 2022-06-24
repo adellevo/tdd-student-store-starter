@@ -1,40 +1,34 @@
-import React, { useState } from "react";
-// import background from "./background.png"
+import React from "react";
 
-export default function CheckoutForm({
-  isOpen,
-  shoppingCart,
-  checkoutForm,
-  handleCheckoutFormChange,
-  handleOnSubmitCheckoutForm,
-}) {
+export default function CheckoutForm(props) {
   return (
-    isOpen && (
-      <div className="checkout-form">
-        <form>
-          <input
-            className="checkout-form-input"
-            type={checkoutForm.text}
-            name={checkoutForm.name}
-            placeholder={"Student Name"}
-            value={checkoutForm.name}
-            onChange={handleCheckoutFormChange}
-          />
-          <input
-            className="checkout-form-input"
-            type={checkoutForm.email}
-            name={checkoutForm.email}
-            placeholder={"student@codepath.org"}
-            value={checkoutForm.email}
-          />
-          <button
-            className="checkout-button"
-            onClick={() => handleOnSubmitCheckoutForm({})}
-          >
-            Checkout
-          </button>
-        </form>
+    <div className="checkout-form">
+      <div>
+        <h3>Payment Info</h3>
       </div>
-    )
+      <form>
+        <input
+          className="checkout-form-input"
+          type="text"
+          name={props.checkoutForm.name}
+          placeholder={"Student Name"}
+          value={props.checkoutForm.name}
+          onChange={props.handleCheckoutFormChange}
+        />
+        <input
+          className="checkout-form-input"
+          type="email"
+          name={props.checkoutForm.email}
+          placeholder={"student@codepath.org"}
+          value={props.checkoutForm.email}
+        />
+        <button
+          className="checkout-button"
+          onClick={() => props.handleOnSubmitCheckoutForm({})}
+        >
+          Checkout
+        </button>
+      </form>
+    </div>
   );
 }

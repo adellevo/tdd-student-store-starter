@@ -1,31 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter } from "react-router-dom";
-import Navbar from "../Navbar/Navbar";
-import Sidebar from "../Sidebar/Sidebar";
-import Home from "../Home/Home";
-import axios from "axios";
-import "./ShoppingCart.css";
+import React from "react";
 
-export default function Receipt({ isOpen, products, shoppingCart }) {
+export default function Receipt(props) {
   return (
     <div className="receipt">
       <div className="receipt-subtotal">
         <span className="label">Subtotal</span>
         <span></span>
         <span></span>
-        <span className="subtotal">{calculateSubtotal().toFixed(2)}</span>
+        <span className="subtotal">{props.calculateSubtotal().toFixed(2)}</span>
       </div>
       <div className="receipt-taxes">
         <span className="label">Taxes and Fees</span>
         <span></span>
         <span></span>
-        <span className="taxes-and-fees">{calculateTaxes().toFixed(2)}</span>
+        <span className="taxes-and-fees">
+          {props.calculateTaxes().toFixed(2)}
+        </span>
       </div>
       <div className="receipt-total">
         <span className="label">Total</span>
         <span></span>
         <span></span>
-        <span className="total-price">{calculateTotal().toFixed(2)}</span>
+        <span className="total-price">{props.calculateTotal().toFixed(2)}</span>
       </div>
     </div>
   );
