@@ -6,11 +6,12 @@
     align-items: center;
     background-color: white;
     border-radius: 1em;
-    width: fit-content;
-    min-width: 25em;
+    width: 100%;
+    /* min-width: 25em; */
 }
 
 .product-card img {
+    /* min-width: 24em; */
     width: 100%;
     height: 300px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
@@ -42,6 +43,7 @@ button:hover {
 .button-container {
     display: flex;
     flex-direction: row;
+    transform: scale(0.8);
 }
 
 /* .button-container > * {
@@ -52,6 +54,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     font-size: large;
+    transform: scale(0.8);
 }
 
 h3 {

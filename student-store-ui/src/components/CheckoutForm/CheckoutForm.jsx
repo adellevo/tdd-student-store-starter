@@ -25,7 +25,7 @@ export default function CheckoutForm(props) {
         />
         <button
           className="checkout-button"
-          onClick={() => props.handleOnSubmitCheckoutForm({})}
+          onClick={props.handleOnSubmitCheckoutForm}
         >
           Checkout
         </button>

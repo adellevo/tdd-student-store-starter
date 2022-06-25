@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
 import axios from "axios";
-import "./App.css";
-import CheckoutForm from "../CheckoutForm/CheckoutForm";
-import ShoppingCart from "../ShoppingCart/ShoppingCart";
-import Search from "../Search/Search";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import NotFound from "../NotFound/NotFound";
+import "./App.css";
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -22,9 +18,11 @@ export default function App() {
   const [isCheckedOut, setCheckedOut] = useState(false);
 
   const findQuantity = (productId) => {
-    for (let i = 0; i < shoppingCart.length; i++) {
-      if (shoppingCart[i].itemId == productId) {
-        return shoppingCart[i].quantity;
+    if (shoppingCart.length > 0) {
+      for (let i = 0; i < shoppingCart.length; i++) {
+        if (shoppingCart[i].itemId == productId) {
+          return shoppingCart[i].quantity;
+        }
       }
     }
     return 0;
@@ -61,6 +59,10 @@ export default function App() {
   };
 
   const handleRemoveItemToCart = (productId) => {
+    if (shoppingCart.length == 0) {
+      return;
+    }
+
     const inCart = shoppingCart.some((item) => {
       return item.itemId === productId;
     });
@@ -68,9 +70,9 @@ export default function App() {
     const index = newShoppingCart.findIndex((item) => item.itemId == productId);
 
     // only remove when it's already in the cart
-    if (inCart && shoppingCart.length != 0) {
-      newShoppingCart[index].quantity == 0
-        ? delete newShoppingCart[index]
+    if (inCart) {
+      newShoppingCart[index].quantity == 1
+        ? (newShoppingCart[index] = delete newShoppingCart[index])
         : (newShoppingCart[index] = {
             itemId: productId,
             quantity: shoppingCart[index].quantity - 1,
@@ -94,7 +96,9 @@ export default function App() {
     }
   }, []);
 
-  const handleOnSubmitCheckoutForm = () => {
+  const handleOnSubmitCheckoutForm = (event) => {
+    console.log("event: ", event);
+    event.preventDefault();
     axios
       .post("https://codepath-store-api.herokuapp.com/store", {
         user: {
@@ -130,7 +134,6 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <main>
-          <Navbar />
           <Sidebar
             isOpen={isOpen}
             shoppingCart={shoppingCart}

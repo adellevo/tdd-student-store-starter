@@ -1,8 +1,8 @@
 import * as React from "react";
-import Contact from "../Contact/Contact";
 import Hero from "../Hero/Hero";
 import ProductGrid from "../ProductGrid/ProductGrid";
-import About from "../About/About";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 import "./Home.css";
 
 export default function Home({
@@ -17,6 +17,7 @@ export default function Home({
 }) {
   return (
     <div className="home">
+      <Navbar />
       <Hero />
       <ProductGrid
         products={products}
@@ -28,6 +29,7 @@ export default function Home({
         setCategory={setCategory}
         category={category}
       />
+      <Footer />
     </div>
   );
 }

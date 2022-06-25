@@ -29,14 +29,14 @@ export default function ShoppingCart(props) {
                     <p className="cart-product-quantity">{item.quantity}</p>
                     <p className="spacer-2"></p>
                     <p className="cart-product-unit-price">
-                      ${props.getProductPrice(item.itemId).toFixed(2)}
+                      ${props.getProductPrice(item.itemId)?.toFixed(2)}
                     </p>
                     <p className="spacer-3"></p>
                     <p className="cart-product-cost">
                       $
                       {props
                         .calculateCost(item.quantity, item.itemId)
-                        .toFixed(2)}
+                        ?.toFixed(2)}
                     </p>
                   </div>
                 )}
