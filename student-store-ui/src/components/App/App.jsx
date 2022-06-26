@@ -55,7 +55,6 @@ export default function App() {
     }
 
     setShoppingCart(newShoppingCart);
-    // console.log(shoppingCart);
   };
 
   const handleRemoveItemToCart = (productId) => {
@@ -63,22 +62,26 @@ export default function App() {
       return;
     }
 
-    const inCart = shoppingCart.some((item) => {
-      return item.itemId === productId;
-    });
-    const newShoppingCart = [...shoppingCart];
+    const inCart = shoppingCart.some((item) => item.itemId === productId);
+    let newShoppingCart = [...shoppingCart];
     const index = newShoppingCart.findIndex((item) => item.itemId == productId);
 
     // only remove when it's already in the cart
     if (inCart) {
-      newShoppingCart[index].quantity == 1
-        ? (newShoppingCart[index] = delete newShoppingCart[index])
-        : (newShoppingCart[index] = {
-            itemId: productId,
-            quantity: shoppingCart[index].quantity - 1,
-          });
+      if (newShoppingCart[index].quantity == 1) {
+        newShoppingCart = [
+          ...newShoppingCart.slice(0, index - 1),
+          ...newShoppingCart.slice(index + 1),
+        ];
+      } else {
+        newShoppingCart[index] = {
+          itemId: productId,
+          quantity: shoppingCart[index].quantity - 1,
+        };
+      }
+      // console.log(newShoppingCart);
       setShoppingCart(newShoppingCart);
-      // console.log(shoppingCart);
+      console.log(shoppingCart);
     }
   };
 
