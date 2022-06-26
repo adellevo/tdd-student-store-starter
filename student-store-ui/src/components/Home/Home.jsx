@@ -17,7 +17,6 @@ export default function Home({
 }) {
   return (
     <div className="home">
-      <Navbar />
       <Hero />
       <ProductGrid
         products={products}
@@ -29,7 +28,6 @@ export default function Home({
         setCategory={setCategory}
         category={category}
       />
-      <Footer />
     </div>
   );
 }

@@ -1,23 +1,18 @@
 .navbar {
     background-color: rgb(36, 36, 36);
-    width: 100%;
-}
-
-.navbar div {
     display: flex;
     flex-direction: row;
     width: 100%;
-    padding-left: 5em;
+    padding: 5em;
 }
 
-.navbar div>* {
+.navbar>* {
     display: flex;
     flex-direction: row;
-    margin-right: 2em;
+    align-items: center;
     font-weight: bold;
     font-size: 1.5em;
-    margin-top: 0;
-    margin-bottom: 2em;
+    margin: 1em;
     color: white;
     cursor: pointer;
 }

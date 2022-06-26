@@ -50,7 +50,9 @@ export default function ShoppingCart(props) {
           />
         </>
       ) : (
-        <p>No items added to cart yet. Start shopping now!</p>
+        <p className="notification">
+          No items added to cart yet. Start shopping now!
+        </p>
       )}
     </div>
   );

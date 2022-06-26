@@ -28,13 +28,13 @@ export default function ProductGrid({
   });
 
   return (
-    <div className="products-container">
+    <div className="product-grid">
       <div className="filters">
         <Search setSearchQuery={setSearchQuery} />
         <CategoryMenu setCategory={setCategory} />
       </div>
       {/* <h1 className="header">Best Selling Products</h1> */}
-      <div className="product-grid">
+      <div className="product-container">
         {filteredProducts.length == 0 ? (
           <NotFound />
         ) : (

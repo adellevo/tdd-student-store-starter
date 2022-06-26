@@ -6,6 +6,7 @@ import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import CheckoutSuccess from "../CheckoutSuccess/CheckoutSuccess";
 
 export default function Sidebar({
+  error,
   isOpen,
   shoppingCart,
   products,
@@ -55,8 +56,9 @@ export default function Sidebar({
       {isOpen && (
         <>
           <ShoppingCart
-            shoppingCart={shoppingCart}
+            isOpen={isOpen}
             products={products}
+            shoppingCart={shoppingCart}
             getProductName={getProductName}
             getProductPrice={getProductPrice}
             calculateCost={calculateCost}
@@ -65,6 +67,8 @@ export default function Sidebar({
             calculateTotal={calculateTotal}
           />
           <CheckoutForm
+            error={error}
+            isOpen={isOpen}
             shoppingCart={shoppingCart}
             checkoutForm={checkoutForm}
             handleCheckoutFormChange={handleOnCheckoutFormChange}

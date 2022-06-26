@@ -5,10 +5,10 @@ export default function CheckoutSuccess(props) {
     <div className="checkout-success">
       <h3>Checkout Info</h3>
       <h4>Receipt</h4>
-      <p>
+      {/* <p>
         Showing receipt for {props.checkoutForm.name} available at{" "}
         {props.checkoutForm.email}{" "}
-      </p>
+      </p> */}
       <ul>
         {props.shoppingCart.map(
           (product) =>

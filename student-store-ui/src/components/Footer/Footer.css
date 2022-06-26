@@ -3,11 +3,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 2em;
+    /* padding: 2em; */
     background-color: rgb(36, 36, 36);
     width: 100%;
     color: white;
-    margin-top: -1em;
+    /* margin-top: 255em; */
     font-size: larger;
     font-weight: bold;
 }

@@ -6,11 +6,9 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <Logo />
-      <div>
-        <p>Home</p>
-        <p>About</p>
-        <p>Contact Us</p>
-      </div>
+      <p>Home</p>
+      <p>About</p>
+      <p>Contact Us</p>
     </nav>
   );
 }

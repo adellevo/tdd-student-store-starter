@@ -1,4 +1,4 @@
-.product-grid {
+.product-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
     justify-items: center;
@@ -6,13 +6,7 @@
     width: 100%;
 }
 
-/* .header {
-    font-size: 2.2em;
-    color: rgb(76, 35, 35);
-    font-weight: 600;
-} */
-
-.products-container {
+.product-grid {
     background-color: rgb(238, 238, 238);
     width: 100%;
     display: flex;
@@ -21,16 +15,7 @@
     padding: 2em;
 }
 
-.products-container {
-    background-color: rgb(243, 243, 243);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5em;
-}
-
-.products-container>* {
+.product-grid>* {
     border-radius: 2em;
 }
 

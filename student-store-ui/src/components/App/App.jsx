@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
+import Footer from "../Footer/Footer";
+import Navbar from "../Navbar/Navbar";
 import Home from "../Home/Home";
 import axios from "axios";
 import ProductDetail from "../ProductDetail/ProductDetail";
@@ -17,6 +19,21 @@ export default function App() {
   const [category, setCategory] = useState("");
   const [isCheckedOut, setCheckedOut] = useState(false);
 
+  // ---- initial load ----
+
+  useEffect(async () => {
+    try {
+      const response = await axios.get(
+        "https://codepath-store-api.herokuapp.com/store"
+      );
+      setProducts(response.data.products);
+      setIsFetching(true);
+    } catch (err) {
+      setError(err);
+      console.log(error);
+    }
+  }, []);
+
   const findQuantity = (productId) => {
     if (shoppingCart.length > 0) {
       for (let i = 0; i < shoppingCart.length; i++) {
@@ -28,12 +45,8 @@ export default function App() {
     return 0;
   };
 
-  const handleOnCheckoutFormChange = (name, value) => {
-    if (name == "name") {
-      setCheckoutForm({ name: name, email: value });
-    } else if (name == "email") {
-      setCheckoutForm({ name: name, email: value });
-    }
+  const handleOnToggle = () => {
+    setIsOpen(!isOpen);
   };
 
   const handleAddItemToCart = (productId) => {
@@ -79,28 +92,19 @@ export default function App() {
           quantity: shoppingCart[index].quantity - 1,
         };
       }
-      // console.log(newShoppingCart);
       setShoppingCart(newShoppingCart);
-      console.log(shoppingCart);
     }
   };
 
-  // ---- initial load ----
-
-  useEffect(async () => {
-    try {
-      const response = await axios.get(
-        "https://codepath-store-api.herokuapp.com/store"
-      );
-      setProducts(response.data.products);
-      setIsFetching(true);
-    } catch (err) {
-      setError(err);
+  const handleOnCheckoutFormChange = (name, value) => {
+    if (name == "name") {
+      setCheckoutForm({ ...checkoutForm, name: value });
+    } else if (name == "email") {
+      setCheckoutForm({ ...checkoutForm, email: value });
     }
-  }, []);
+  };
 
   const handleOnSubmitCheckoutForm = (event) => {
-    console.log("event: ", event);
     event.preventDefault();
     axios
       .post("https://codepath-store-api.herokuapp.com/store", {
@@ -113,70 +117,69 @@ export default function App() {
         },
       })
       .then(function (response) {
-        console.log(response);
         setCheckedOut(true);
+        setShoppingCart([]);
+        setCheckoutForm({});
       })
       .catch(function (err) {
         setError(err);
+        console.log(error);
       });
   };
-
-  useEffect(async () => {
-    try {
-      const response = await axios.get(
-        "https://codepath-store-api.herokuapp.com/store"
-      );
-      setProducts(response.data.products);
-      setIsFetching(true);
-    } catch (err) {
-      setError(err);
-    }
-  }, []);
 
   return (
     <div className="app">
       <BrowserRouter>
         <main>
-          <Sidebar
-            isOpen={isOpen}
-            shoppingCart={shoppingCart}
-            products={products}
-            checkoutForm={checkoutForm}
-            handleOnCheckoutFormChange={handleOnCheckoutFormChange}
-            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
-            findQuantity={findQuantity}
-            handleOnToggle={() => setIsOpen(!isOpen)}
-            isCheckedOut={isCheckedOut}
-          />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Home
-                  products={products}
-                  handleAddItemToCart={handleAddItemToCart}
-                  handleRemoveItemToCart={handleRemoveItemToCart}
-                  shoppingCart={shoppingCart}
-                  findQuantity={findQuantity}
-                  setProducts={setProducts}
-                  setCategory={setCategory}
-                  category={category}
-                />
-              }
+          <div className="left-container">
+            <Sidebar
+              error={error}
+              isOpen={isOpen}
+              shoppingCart={shoppingCart}
+              products={products}
+              checkoutForm={checkoutForm}
+              handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+              handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+              findQuantity={findQuantity}
+              handleOnToggle={handleOnToggle}
+              isCheckedOut={isCheckedOut}
             />
-            <Route
-              path="/products/:productId"
-              element={
-                <ProductDetail
-                  shoppingCart={shoppingCart}
-                  products={products}
-                  handleAddItemToCart={handleAddItemToCart}
-                  handleRemoveItemToCart={handleRemoveItemToCart}
-                />
-              }
-            />
-            <Route path="/*" element={<NotFound />} />
-          </Routes>
+          </div>
+          <div className="right-container">
+            <Navbar />
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <Home
+                    products={products}
+                    handleAddItemToCart={handleAddItemToCart}
+                    handleRemoveItemToCart={handleRemoveItemToCart}
+                    shoppingCart={shoppingCart}
+                    findQuantity={findQuantity}
+                    setProducts={setProducts}
+                    setCategory={setCategory}
+                    category={category}
+                  />
+                }
+              />
+              <Route
+                path="/products/:productId"
+                element={
+                  <div>
+                    <ProductDetail
+                      shoppingCart={shoppingCart}
+                      products={products}
+                      handleAddItemToCart={handleAddItemToCart}
+                      handleRemoveItemToCart={handleRemoveItemToCart}
+                    />
+                  </div>
+                }
+              />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <Footer />
+          </div>
         </main>
       </BrowserRouter>
     </div>
