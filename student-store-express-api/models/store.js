@@ -17,6 +17,15 @@ class StoreModel {
         // console.log(product);
         return product;
     }
+
+    static validShoppingCartFields(shoppingCart) {
+        for (let i = 0; i < shoppingCart.length; i++) {
+            if (! shoppingCart[i].itemId || ! shoppingCart[i].quantity) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
 module.exports = StoreModel
