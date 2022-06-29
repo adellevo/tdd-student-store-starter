@@ -12,9 +12,9 @@ class StoreModel {
     }
 
     static fetchProductById(productId) {
+        console.log('productId: ', productId);
         const products = this.listAllProducts();
         const product = products.find((item) => item.id == productId);
-        // console.log(product);
         return product;
     }
 
@@ -28,6 +28,7 @@ class StoreModel {
     }
 
     static saveToDatabase(value) {
+        console.log('saveToDatabase: ', value, storage.get("purchases"));
         storage.add("purchases", value);
     }
 

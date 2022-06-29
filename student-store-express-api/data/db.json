@@ -145,5 +145,474 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "name": "Adelle",
+      "email": "blah@gmail.com",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 6
+        },
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": "112.50",
+      "createdAt": "2022-06-29T21:25:23.360Z",
+      "receipt": {
+        "userInfo": {
+          "name": "Adelle",
+          "email": "blah@gmail.com"
+        },
+        "lines": [
+          "Showing receipt for Adelle available at blah@gmail.com",
+          "6 total Fruit Medley purchased at a cost of $7.50 for a total cost of $45.00",
+          "2 total Fruit Medley purchased at a cost of $7.50 for a total cost of $15.00",
+          "Before taxes, the subtotal was 60.00",
+          "After taxes and fees were applied, the total comes out to 112.50"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "Adelle",
+      "email": "blah@gmail.com",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 6
+        },
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": "112.50",
+      "createdAt": "2022-06-29T21:25:57.720Z",
+      "receipt": {
+        "userInfo": {
+          "name": "Adelle",
+          "email": "blah@gmail.com"
+        },
+        "lines": [
+          "Showing receipt for Adelle available at blah@gmail.com",
+          "6 total Fruit Medley purchased at a cost of $7.50 for a total cost of $45.00",
+          "2 total Fruit Medley purchased at a cost of $7.50 for a total cost of $15.00",
+          "Before taxes, the subtotal was 60.00",
+          "After taxes and fees were applied, the total comes out to 112.50"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "name": "adelle",
+      "email": "amv@fb.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 2
+        }
+      ],
+      "total": "3.71",
+      "createdAt": "2022-06-29T21:26:20.026Z",
+      "receipt": {
+        "userInfo": {
+          "name": "adelle",
+          "email": "amv@fb.com"
+        },
+        "lines": [
+          "Showing receipt for adelle available at amv@fb.com",
+          "2 total Rice Krispies purchased at a cost of $0.99 for a total cost of $1.98",
+          "Before taxes, the subtotal was 1.98",
+          "After taxes and fees were applied, the total comes out to 3.71"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "name": "adelle",
+      "email": "amv@fb.com",
+      "order": [],
+      "total": "0.00",
+      "createdAt": "2022-06-29T21:28:06.280Z",
+      "receipt": {
+        "userInfo": {
+          "name": "adelle",
+          "email": "amv@fb.com"
+        },
+        "lines": [
+          "Showing receipt for adelle available at amv@fb.com",
+          "Before taxes, the subtotal was 0.00",
+          "After taxes and fees were applied, the total comes out to 0.00"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "name": "adelle",
+      "email": "amv@fb.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 1,
+          "quantity": 2
+        }
+      ],
+      "total": "9.34",
+      "createdAt": "2022-06-29T21:28:26.712Z",
+      "receipt": {
+        "userInfo": {
+          "name": "adelle",
+          "email": "amv@fb.com"
+        },
+        "lines": [
+          "Showing receipt for adelle available at amv@fb.com",
+          "2 total Flamin Hot Cheetos purchased at a cost of $1.50 for a total cost of $3.00",
+          "2 total Rice Krispies purchased at a cost of $0.99 for a total cost of $1.98",
+          "Before taxes, the subtotal was 4.98",
+          "After taxes and fees were applied, the total comes out to 9.34"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "name": "adelle",
+      "email": "amv@fb.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 3
+        }
+      ],
+      "total": "5.57",
+      "createdAt": "2022-06-29T21:29:05.393Z",
+      "receipt": {
+        "userInfo": {
+          "name": "adelle",
+          "email": "amv@fb.com"
+        },
+        "lines": [
+          "Showing receipt for adelle available at amv@fb.com",
+          "3 total Rice Krispies purchased at a cost of $0.99 for a total cost of $2.97",
+          "Before taxes, the subtotal was 2.97",
+          "After taxes and fees were applied, the total comes out to 5.57"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "name": "adelle",
+      "email": "amv@fb.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 2
+        }
+      ],
+      "total": "3.71",
+      "createdAt": "2022-06-29T21:43:59.253Z",
+      "receipt": {
+        "userInfo": {
+          "name": "adelle",
+          "email": "amv@fb.com"
+        },
+        "lines": [
+          "Showing receipt for adelle available at amv@fb.com",
+          "2 total Rice Krispies purchased at a cost of $0.99 for a total cost of $1.98",
+          "Before taxes, the subtotal was 1.98",
+          "After taxes and fees were applied, the total comes out to 3.71"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "name": "adelle",
+      "email": "amv@fb.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        }
+      ],
+      "total": "1.86",
+      "createdAt": "2022-06-29T21:46:07.926Z",
+      "receipt": {
+        "userInfo": {
+          "name": "adelle",
+          "email": "amv@fb.com"
+        },
+        "lines": [
+          "Showing receipt for adelle available at amv@fb.com",
+          "1 total Rice Krispies purchased at a cost of $0.99 for a total cost of $0.99",
+          "Before taxes, the subtotal was 0.99",
+          "After taxes and fees were applied, the total comes out to 1.86"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "name": "adelle",
+      "email": "amv@fb.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 5
+        }
+      ],
+      "total": "14.06",
+      "createdAt": "2022-06-29T21:50:04.703Z",
+      "receipt": {
+        "userInfo": {
+          "name": "adelle",
+          "email": "amv@fb.com"
+        },
+        "lines": [
+          "Showing receipt for adelle available at amv@fb.com",
+          "5 total Flamin Hot Cheetos purchased at a cost of $1.50 for a total cost of $7.50",
+          "Before taxes, the subtotal was 7.50",
+          "After taxes and fees were applied, the total comes out to 14.06"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "name": "adelle",
+      "email": "amv@fb.com",
+      "order": [],
+      "total": "0.00",
+      "createdAt": "2022-06-29T21:59:49.116Z",
+      "receipt": {
+        "userInfo": {
+          "name": "adelle",
+          "email": "amv@fb.com"
+        },
+        "lines": [
+          "Showing receipt for adelle available at amv@fb.com",
+          "Before taxes, the subtotal was 0.00",
+          "After taxes and fees were applied, the total comes out to 0.00"
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 2
+        },
+        {
+          "itemId": 2,
+          "quantity": 2
+        }
+      ],
+      "total": "9.34",
+      "createdAt": "2022-06-29T22:00:02.213Z",
+      "receipt": {
+        "userInfo": {},
+        "lines": [
+          "Showing receipt for undefined available at undefined",
+          "2 total Rice Krispies purchased at a cost of $0.99 for a total cost of $1.98",
+          "2 total Flamin Hot Cheetos purchased at a cost of $1.50 for a total cost of $3.00",
+          "Before taxes, the subtotal was 4.98",
+          "After taxes and fees were applied, the total comes out to 9.34"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "name": "adelle",
+      "email": "amv@fb.com",
+      "order": [],
+      "total": "0.00",
+      "createdAt": "2022-06-29T22:02:11.916Z",
+      "receipt": {
+        "userInfo": {
+          "name": "adelle",
+          "email": "amv@fb.com"
+        },
+        "lines": [
+          "Showing receipt for adelle available at amv@fb.com",
+          "Before taxes, the subtotal was 0.00",
+          "After taxes and fees were applied, the total comes out to 0.00"
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": "10.28",
+      "createdAt": "2022-06-29T22:02:29.389Z",
+      "receipt": {
+        "userInfo": {},
+        "lines": [
+          "Showing receipt for undefined available at undefined",
+          "1 total Rice Krispies purchased at a cost of $0.99 for a total cost of $0.99",
+          "1 total Flamin Hot Cheetos purchased at a cost of $1.50 for a total cost of $1.50",
+          "1 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $2.99",
+          "Before taxes, the subtotal was 5.48",
+          "After taxes and fees were applied, the total comes out to 10.28"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "order": [],
+      "total": "0.00",
+      "createdAt": "2022-06-29T22:04:29.408Z",
+      "receipt": {
+        "userInfo": {},
+        "lines": [
+          "Showing receipt for undefined available at undefined",
+          "Before taxes, the subtotal was 0.00",
+          "After taxes and fees were applied, the total comes out to 0.00"
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 2
+        },
+        {
+          "itemId": 2,
+          "quantity": 2
+        }
+      ],
+      "total": "9.34",
+      "createdAt": "2022-06-29T22:04:41.994Z",
+      "receipt": {
+        "userInfo": {},
+        "lines": [
+          "Showing receipt for undefined available at undefined",
+          "2 total Rice Krispies purchased at a cost of $0.99 for a total cost of $1.98",
+          "2 total Flamin Hot Cheetos purchased at a cost of $1.50 for a total cost of $3.00",
+          "Before taxes, the subtotal was 4.98",
+          "After taxes and fees were applied, the total comes out to 9.34"
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "order": [],
+      "total": "0.00",
+      "createdAt": "2022-06-29T22:05:10.559Z",
+      "receipt": {
+        "userInfo": {},
+        "lines": [
+          "Showing receipt for undefined available at undefined",
+          "Before taxes, the subtotal was 0.00",
+          "After taxes and fees were applied, the total comes out to 0.00"
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "name": "adelle",
+      "email": "adelle.vo@gmail.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 2
+        }
+      ],
+      "total": "3.71",
+      "createdAt": "2022-06-29T22:06:02.370Z",
+      "receipt": {
+        "userInfo": {
+          "name": "adelle",
+          "email": "adelle.vo@gmail.com"
+        },
+        "lines": [
+          "Showing receipt for adelle available at adelle.vo@gmail.com",
+          "2 total Rice Krispies purchased at a cost of $0.99 for a total cost of $1.98",
+          "Before taxes, the subtotal was 1.98",
+          "After taxes and fees were applied, the total comes out to 3.71"
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "name": "adelle",
+      "email": "amv@fb.com",
+      "order": [],
+      "total": "0.00",
+      "createdAt": "2022-06-29T22:14:35.111Z",
+      "receipt": {
+        "userInfo": {
+          "name": "adelle",
+          "email": "amv@fb.com"
+        },
+        "lines": [
+          "Showing receipt for adelle available at amv@fb.com",
+          "Before taxes, the subtotal was 0.00",
+          "After taxes and fees were applied, the total comes out to 0.00"
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "name": "adelle",
+      "email": "amv@fb.com",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 1,
+          "quantity": 2
+        }
+      ],
+      "total": "9.34",
+      "createdAt": "2022-06-29T22:17:13.490Z",
+      "receipt": {
+        "userInfo": {
+          "name": "adelle",
+          "email": "amv@fb.com"
+        },
+        "lines": [
+          "Showing receipt for adelle available at amv@fb.com",
+          "2 total Flamin Hot Cheetos purchased at a cost of $1.50 for a total cost of $3.00",
+          "2 total Rice Krispies purchased at a cost of $0.99 for a total cost of $1.98",
+          "Before taxes, the subtotal was 4.98",
+          "After taxes and fees were applied, the total comes out to 9.34"
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "order": [],
+      "total": "0.00",
+      "createdAt": "2022-06-29T22:19:18.961Z",
+      "receipt": {
+        "userInfo": {},
+        "lines": [
+          "Showing receipt for undefined available at undefined",
+          "Before taxes, the subtotal was 0.00",
+          "After taxes and fees were applied, the total comes out to 0.00"
+        ]
+      }
+    }
+  ]
 }

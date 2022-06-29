@@ -25,8 +25,10 @@ app.post('/store', (req, res) => {
     const shoppingCart = req.body.shoppingCart;
     const user = req.body.user;
 
-    console.log(shoppingCart)
-    console.log(user)
+    // console.log("in here");
+
+    // console.log(shoppingCart)
+    // console.log(user)
     // console.log("in here 2")
 
     if (!shoppingCart || !user) {
@@ -45,9 +47,9 @@ app.post('/store', (req, res) => {
         totalCost += cost;
         lines.push(`${shoppingCart[i].quantity} total ${product.name} purchased at a cost of $${product.price.toFixed(2)} for a total cost of $${cost.toFixed(2)}`);
     }
-    lines.push(`Before taxes, the subtotal was ${totalCost.toFixed(2)}`);
+    lines.push(`Before taxes, the subtotal was $${totalCost.toFixed(2)}`);
     totalCost *= 1.875;
-    lines.push(`After taxes and fees were applied, the total comes out to ${totalCost.toFixed(2)}`);
+    lines.push(`After taxes and fees were applied, the total comes out to $${totalCost.toFixed(2)}`);
 
     const purchase = {
         "id": StoreModel.getPurchaseId(), 
@@ -65,11 +67,11 @@ app.post('/store', (req, res) => {
         }
     };
     
-    let hasDuplicate = shoppingCart.some((val, i) => shoppingCart.indexOf(val) !== i);
-    if (hasDuplicate) {
-        // console.log("in here 4");
-        throw new Error(400);
-    }
+    // let hasDuplicate = shoppingCart.some((val, i) => shoppingCart.indexOf(val) !== i);
+    // if (hasDuplicate) {
+    //     // console.log("in here 4");
+    //     throw new Error(400);
+    // }
 
     // console.log("in here 5")
     // res.status(201).send({"shoppingCart": shoppingCart, "user": user})

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import axios from "axios";
 import Sidebar from "../Sidebar/Sidebar";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import Home from "../Home/Home";
-import axios from "axios";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import NotFound from "../NotFound/NotFound";
 import "./App.css";
@@ -18,6 +18,7 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = useState([]);
   const [category, setCategory] = useState("");
   const [isCheckedOut, setCheckedOut] = useState(false);
+  const [receipt, setReceipt] = useState({});
 
   // ---- initial load ----
 
@@ -48,9 +49,7 @@ export default function App() {
   };
 
   const handleAddItemToCart = (productId) => {
-    const inCart = shoppingCart.some((item) => {
-      return item.itemId === productId;
-    });
+    const inCart = shoppingCart.some((item) => item.itemId === productId);
     const newShoppingCart = [...shoppingCart];
 
     if (!inCart) {
@@ -100,29 +99,40 @@ export default function App() {
     } else if (name == "email") {
       setCheckoutForm({ ...checkoutForm, email: value });
     }
+    // console.log(checkoutForm);
   };
 
   const handleOnSubmitCheckoutForm = (event) => {
     event.preventDefault();
+    // console.log(checkoutForm);
+    // handleOnCheckoutFormChange(checkoutForm.name, checkoutForm.email);
     axios
       .post("http://localhost:3001/store", {
         user: {
           name: checkoutForm.name,
           email: checkoutForm.email,
         },
-        shoppingCart: {
-          orders: shoppingCart,
-        },
+        shoppingCart: shoppingCart,
       })
-      .then(function (response) {
+      .then((response) => {
+        // console.log("hiiii: ", response.data.purchase.receipt);
+        // setPurchase(response.purchase);
+        // response.receipt
+        // console.log(response.data.purchase.receipt)
+        setReceipt(response.data.purchase.receipt);
+        // console.log(receipt);
         setCheckedOut(true);
-        setShoppingCart([]);
-        setCheckoutForm({});
+        // setShoppingCart([]);
+        // setCheckoutForm({});
       })
-      .catch(function (err) {
+      .catch((err) => {
         setError(err);
         console.log(error);
       });
+
+    // setCheckedOut(true);
+    setShoppingCart([]);
+    setCheckoutForm({});
   };
 
   return (
@@ -130,6 +140,7 @@ export default function App() {
       <BrowserRouter>
         <main>
           <div className="left-container">
+            {console.log(receipt)}
             <Sidebar
               error={error}
               isOpen={isOpen}
@@ -141,6 +152,9 @@ export default function App() {
               findQuantity={findQuantity}
               handleOnToggle={handleOnToggle}
               isCheckedOut={isCheckedOut}
+              setCheckedOut={setCheckedOut}
+              receipt={receipt}
+              // purchase={purchase}
             />
           </div>
           <div className="right-container">

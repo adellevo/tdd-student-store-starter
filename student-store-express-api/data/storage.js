@@ -22,9 +22,9 @@ class Storage {
     return this.db.get(key).value();
   }
 
-  // set(key, value) {
-  //   return this.db.set(key, value)
-  // }
+  set(key, value) {
+    return this.db.set(key, value)
+  }
 
   // get(key) {
   //   return this.db.get(key)

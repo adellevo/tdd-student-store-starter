@@ -12,7 +12,9 @@ export default function CheckoutForm(props) {
           name="email"
           placeholder={"student@codepath.org"}
           value={props.checkoutForm.email}
-          onChange={() => props.handleCheckoutFormChange}
+          onChange={(event) => {
+            props.handleOnCheckoutFormChange("email", event.target.value);
+          }}
         />
         <input
           className="checkout-form-input"
@@ -20,19 +22,22 @@ export default function CheckoutForm(props) {
           name="name"
           placeholder={"Student Name"}
           value={props.checkoutForm.name}
-          onChange={() => props.handleCheckoutFormChange}
+          onChange={(event) => {
+            props.handleOnCheckoutFormChange("name", event.target.value);
+          }}
         />
         <button
           className="checkout-button"
-          onClick={() => props.handleOnSubmitCheckoutForm}
+          onClick={props.handleOnSubmitCheckoutForm}
         >
           Checkout
         </button>
-        {props.error !== "" ? (
+        {props.error !== "" && <p className="error">{props.error}</p>}
+        {/* {props.error !== "" ? (
           <p className="error">{props.error}</p>
         ) : (
           <p className="success">Success!</p>
-        )}
+        )} */}
       </form>
     </div>
   );
