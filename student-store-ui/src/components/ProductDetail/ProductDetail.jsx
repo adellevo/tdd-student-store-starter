@@ -15,7 +15,7 @@ export default function ProductDetail({
   useEffect(async () => {
     try {
       const response = await axios.get(
-        `https://codepath-store-api.herokuapp.com/store/${params.productId}`
+        `http://localhost:3001/store/${params.productId}`
       );
       setProduct(response.data.product);
     } catch (err) {

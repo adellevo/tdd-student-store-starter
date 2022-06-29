@@ -8,7 +8,7 @@ class StoreModel {
 
     static listAllProducts() {
         // console.log(storage);
-      return storage.get("products").value();
+        return storage.get("products");
     }
 
     static fetchProductById(productId) {
@@ -25,6 +25,16 @@ class StoreModel {
             }
         }
         return true;
+    }
+
+    static saveToDatabase(value) {
+        storage.add("purchases", value);
+    }
+
+    static getPurchaseId() {
+        console.log("in here");
+        const purchases = storage.get("purchases");
+        return purchases.length+1;
     }
 }
 
