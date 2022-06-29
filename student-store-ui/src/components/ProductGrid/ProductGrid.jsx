@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import ProductCard from "../ProductCard/ProductCard";
-import "./ProductGrid.css";
-import CategoryMenu from "../CategoryMenu/CategoryMenu";
-import Search from "../Search/Search";
-import NotFound from "../NotFound/NotFound";
-import About from "../About/About";
-import Contact from "../Contact/Contact";
+import React, { useState } from 'react';
+import ProductCard from '../ProductCard/ProductCard';
+import './ProductGrid.css';
+import CategoryMenu from '../CategoryMenu/CategoryMenu';
+import Search from '../Search/Search';
+import NotFound from '../NotFound/NotFound';
+import About from '../About/About';
+import Contact from '../Contact/Contact';
 
 export default function ProductGrid({
   products,
@@ -13,18 +13,17 @@ export default function ProductGrid({
   handleRemoveItemToCart,
   findQuantity,
 }) {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [category, setCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState('');
+  const [category, setCategory] = useState('all');
 
   const filteredProducts = products.filter((product) => {
-    if (category == "all") {
+    if (category == 'all') {
       return product.name.toLowerCase().includes(searchQuery);
-    } else {
-      return (
-        product.category == category &&
-        product.name.toLowerCase().includes(searchQuery)
-      );
     }
+    return (
+      product.category == category
+        && product.name.toLowerCase().includes(searchQuery)
+    );
   });
 
   return (

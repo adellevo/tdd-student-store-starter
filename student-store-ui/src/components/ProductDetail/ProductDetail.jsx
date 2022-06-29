@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
-import ProductView from "../ProductView/ProductView";
-import { Routes, Route, Link, useParams } from "react-router-dom";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import {
+  Routes, Route, Link, useParams,
+} from 'react-router-dom';
+import axios from 'axios';
+import ProductView from '../ProductView/ProductView';
 
 export default function ProductDetail({
   shoppingCart,
@@ -15,7 +17,7 @@ export default function ProductDetail({
   useEffect(async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/store/${params.productId}`
+        `http://localhost:3001/store/${params.productId}`,
       );
       setProduct(response.data.product);
     } catch (err) {
@@ -25,7 +27,7 @@ export default function ProductDetail({
 
   return (
     <div className="product-detail">
-      {JSON.stringify(product) === "{}" ? (
+      {JSON.stringify(product) === '{}' ? (
         <h1 className="loading"> Loading... </h1>
       ) : (
         <ProductView
@@ -33,7 +35,7 @@ export default function ProductDetail({
           productId={params.productId}
           quantity={() => {
             const shoppingCartItem = shoppingCart.find(
-              (item) => item.itemId == params.productId
+              (item) => item.itemId == params.productId,
             );
             return shoppingCartItem ? shoppingCartItem.quantity : 0;
           }}

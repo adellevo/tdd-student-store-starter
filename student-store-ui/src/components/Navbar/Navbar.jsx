@@ -1,6 +1,6 @@
-import * as React from "react";
-import Logo from "../Logo/Logo";
-import "./Navbar.css";
+import * as React from 'react';
+import Logo from '../Logo/Logo';
+import './Navbar.css';
 
 export default function Navbar() {
   return (

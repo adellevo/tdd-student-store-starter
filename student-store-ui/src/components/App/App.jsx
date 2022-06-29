@@ -1,29 +1,31 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Sidebar from "../Sidebar/Sidebar";
-import Footer from "../Footer/Footer";
-import Navbar from "../Navbar/Navbar";
-import Home from "../Home/Home";
-import axios from "axios";
-import ProductDetail from "../ProductDetail/ProductDetail";
-import NotFound from "../NotFound/NotFound";
-import "./App.css";
+import React, { useEffect, useState } from 'react';
+import {
+  BrowserRouter, Routes, Route, Link,
+} from 'react-router-dom';
+import axios from 'axios';
+import Sidebar from '../Sidebar/Sidebar';
+import Footer from '../Footer/Footer';
+import Navbar from '../Navbar/Navbar';
+import Home from '../Home/Home';
+import ProductDetail from '../ProductDetail/ProductDetail';
+import NotFound from '../NotFound/NotFound';
+import './App.css';
 
 export default function App() {
   const [products, setProducts] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const [checkoutForm, setCheckoutForm] = useState({});
   const [isOpen, setIsOpen] = useState(false);
   const [shoppingCart, setShoppingCart] = useState([]);
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState('');
   const [isCheckedOut, setCheckedOut] = useState(false);
 
   // ---- initial load ----
 
   useEffect(async () => {
     try {
-      const response = await axios.get("http://localhost:3001/store");
+      const response = await axios.get('http://localhost:3001/store');
       setProducts(response.data.products);
       setIsFetching(true);
     } catch (err) {
@@ -48,16 +50,14 @@ export default function App() {
   };
 
   const handleAddItemToCart = (productId) => {
-    const inCart = shoppingCart.some((item) => {
-      return item.itemId === productId;
-    });
+    const inCart = shoppingCart.some((item) => item.itemId === productId);
     const newShoppingCart = [...shoppingCart];
 
     if (!inCart) {
       newShoppingCart.push({ itemId: productId, quantity: 1 });
     } else {
       const index = newShoppingCart.findIndex(
-        (item) => item.itemId == productId
+        (item) => item.itemId == productId,
       );
       newShoppingCart[index] = {
         itemId: productId,
@@ -95,9 +95,9 @@ export default function App() {
   };
 
   const handleOnCheckoutFormChange = (name, value) => {
-    if (name == "name") {
+    if (name == 'name') {
       setCheckoutForm({ ...checkoutForm, name: value });
-    } else if (name == "email") {
+    } else if (name == 'email') {
       setCheckoutForm({ ...checkoutForm, email: value });
     }
   };
@@ -105,7 +105,7 @@ export default function App() {
   const handleOnSubmitCheckoutForm = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:3001/store", {
+      .post('http://localhost:3001/store', {
         user: {
           name: checkoutForm.name,
           email: checkoutForm.email,
@@ -114,12 +114,12 @@ export default function App() {
           orders: shoppingCart,
         },
       })
-      .then(function (response) {
+      .then((response) => {
         setCheckedOut(true);
         setShoppingCart([]);
         setCheckoutForm({});
       })
-      .catch(function (err) {
+      .catch((err) => {
         setError(err);
         console.log(error);
       });
@@ -148,7 +148,7 @@ export default function App() {
             <Routes>
               <Route
                 path="/"
-                element={
+                element={(
                   <Home
                     products={products}
                     handleAddItemToCart={handleAddItemToCart}
@@ -159,11 +159,11 @@ export default function App() {
                     setCategory={setCategory}
                     category={category}
                   />
-                }
+                )}
               />
               <Route
                 path="/products/:productId"
-                element={
+                element={(
                   <div>
                     <ProductDetail
                       shoppingCart={shoppingCart}
@@ -172,7 +172,7 @@ export default function App() {
                       handleRemoveItemToCart={handleRemoveItemToCart}
                     />
                   </div>
-                }
+                )}
               />
               <Route path="*" element={<NotFound />} />
             </Routes>

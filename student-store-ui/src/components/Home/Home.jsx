@@ -1,9 +1,9 @@
-import * as React from "react";
-import Hero from "../Hero/Hero";
-import ProductGrid from "../ProductGrid/ProductGrid";
-import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer/Footer";
-import "./Home.css";
+import * as React from 'react';
+import Hero from '../Hero/Hero';
+import ProductGrid from '../ProductGrid/ProductGrid';
+import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
+import './Home.css';
 
 export default function Home({
   products,

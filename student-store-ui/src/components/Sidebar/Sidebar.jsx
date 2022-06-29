@@ -1,9 +1,9 @@
-import * as React from "react";
-import "./Sidebar.css";
-import sidebarIcon from "./shopping-cart.svg";
-import ShoppingCart from "../ShoppingCart/ShoppingCart";
-import CheckoutForm from "../CheckoutForm/CheckoutForm";
-import CheckoutSuccess from "../CheckoutSuccess/CheckoutSuccess";
+import * as React from 'react';
+import './Sidebar.css';
+import sidebarIcon from './shopping-cart.svg';
+import ShoppingCart from '../ShoppingCart/ShoppingCart';
+import CheckoutForm from '../CheckoutForm/CheckoutForm';
+import CheckoutSuccess from '../CheckoutSuccess/CheckoutSuccess';
 
 export default function Sidebar({
   error,
@@ -16,13 +16,9 @@ export default function Sidebar({
   handleOnToggle,
   isCheckedOut,
 }) {
-  const getProductName = (productId) => {
-    return products.find((product) => product.id == productId).name;
-  };
+  const getProductName = (productId) => products.find((product) => product.id == productId).name;
 
-  const getProductPrice = (productId) => {
-    return products.find((product) => product.id == productId).price;
-  };
+  const getProductPrice = (productId) => products.find((product) => product.id == productId).price;
 
   const calculateCost = (quantity, productId) => {
     const newCost = quantity * getProductPrice(productId);
@@ -34,19 +30,15 @@ export default function Sidebar({
     for (let i = 0; i < shoppingCart.length; i++) {
       subtotal += calculateCost(
         shoppingCart[i].quantity,
-        shoppingCart[i].itemId
+        shoppingCart[i].itemId,
       );
     }
     return subtotal;
   };
 
-  const calculateTaxes = () => {
-    return 0.1 * calculateSubtotal();
-  };
+  const calculateTaxes = () => 0.1 * calculateSubtotal();
 
-  const calculateTotal = () => {
-    return calculateSubtotal() + calculateTaxes();
-  };
+  const calculateTotal = () => calculateSubtotal() + calculateTaxes();
 
   return (
     <section className="sidebar">

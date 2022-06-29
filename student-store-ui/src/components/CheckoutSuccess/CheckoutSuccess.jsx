@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function CheckoutSuccess(props) {
   return (
@@ -11,21 +11,27 @@ export default function CheckoutSuccess(props) {
       </p> */}
       <ul>
         {props.shoppingCart.map(
-          (product) =>
-            product.quantity > 0 && (
-              <li key={product.itemId}>
-                {product.quantity} total {props.getProductName(product.itemId)}{" "}
-                purchased at a cost of $
-                {props.getProductPrice(product.itemId).toFixed(2)} for a total
-                cost of $
-                {props
-                  .calculateCost(product.quantity, product.itemId)
-                  .toFixed(2)}
-              </li>
-            )
+          (product) => product.quantity > 0 && (
+          <li key={product.itemId}>
+            {product.quantity}
+            {' '}
+            total
+            {props.getProductName(product.itemId)}
+            {' '}
+            purchased at a cost of $
+            {props.getProductPrice(product.itemId).toFixed(2)}
+            {' '}
+            for a total
+            cost of $
+            {props
+              .calculateCost(product.quantity, product.itemId)
+              .toFixed(2)}
+          </li>
+          ),
         )}
         <li>
-          Before taxes, the subtotal was ${props.calculateSubtotal().toFixed(2)}
+          Before taxes, the subtotal was $
+          {props.calculateSubtotal().toFixed(2)}
         </li>
         <li>
           After taxes and fees were applied, the total comes out to $

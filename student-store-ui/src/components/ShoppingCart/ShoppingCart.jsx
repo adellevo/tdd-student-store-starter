@@ -1,6 +1,6 @@
-import React from "react";
-import Receipt from "../Receipt/Receipt";
-import "./ShoppingCart.css";
+import React from 'react';
+import Receipt from '../Receipt/Receipt';
+import './ShoppingCart.css';
 
 export default function ShoppingCart(props) {
   return (
@@ -11,11 +11,11 @@ export default function ShoppingCart(props) {
           <div className="cart-table">
             <div className="cart-header">
               <p>Name</p>
-              <p className="spacer"></p>
+              <p className="spacer" />
               <p>Quantity</p>
-              <p className="spacer"></p>
+              <p className="spacer" />
               <p>Unit Price</p>
-              <p className="spacer"></p>
+              <p className="spacer" />
               <p>Cost</p>
             </div>
             {props.shoppingCart?.map((item, index) => (
@@ -25,13 +25,14 @@ export default function ShoppingCart(props) {
                     <p className="cart-product-name">
                       {props.getProductName(item.itemId)}
                     </p>
-                    <p className="spacer"></p>
+                    <p className="spacer" />
                     <p className="cart-product-quantity">{item.quantity}</p>
-                    <p className="spacer-2"></p>
+                    <p className="spacer-2" />
                     <p className="cart-product-unit-price">
-                      ${props.getProductPrice(item.itemId)?.toFixed(2)}
+                      $
+                      {props.getProductPrice(item.itemId)?.toFixed(2)}
                     </p>
-                    <p className="spacer-3"></p>
+                    <p className="spacer-3" />
                     <p className="cart-product-cost">
                       $
                       {props

@@ -1,5 +1,5 @@
-import React from "react";
-import "./CheckoutForm.css";
+import React from 'react';
+import './CheckoutForm.css';
 
 export default function CheckoutForm(props) {
   return (
@@ -10,7 +10,7 @@ export default function CheckoutForm(props) {
           className="checkout-form-input"
           type="email"
           name="email"
-          placeholder={"student@codepath.org"}
+          placeholder="student@codepath.org"
           value={props.checkoutForm.email}
           onChange={() => props.handleCheckoutFormChange}
         />
@@ -18,7 +18,7 @@ export default function CheckoutForm(props) {
           className="checkout-form-input"
           type="text"
           name="name"
-          placeholder={"Student Name"}
+          placeholder="Student Name"
           value={props.checkoutForm.name}
           onChange={() => props.handleCheckoutFormChange}
         />
@@ -28,7 +28,7 @@ export default function CheckoutForm(props) {
         >
           Checkout
         </button>
-        {props.error !== "" ? (
+        {props.error !== '' ? (
           <p className="error">{props.error}</p>
         ) : (
           <p className="success">Success!</p>

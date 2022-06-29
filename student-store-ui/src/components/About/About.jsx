@@ -1,6 +1,6 @@
-import React from "react";
-import image from "./codepath.svg";
-import "./About.css";
+import React from 'react';
+import image from './codepath.svg';
+import './About.css';
 
 export default function About() {
   return (
