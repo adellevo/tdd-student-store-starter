@@ -7,7 +7,6 @@ class StoreModel {
     }
 
     static listAllProducts() {
-        // console.log(storage);
         return storage.get("products");
     }
 
@@ -18,18 +17,24 @@ class StoreModel {
         return product;
     }
 
-    static validShoppingCartFields(shoppingCart) {
-        for (let i = 0; i < shoppingCart.length; i++) {
-            if (! shoppingCart[i].itemId || ! shoppingCart[i].quantity) {
-                return false;
-            }
+    // check validity of shoppingCart and user
+    static validatePayloadFields(shoppingCart, user) {
+        if (!shoppingCart || !user) {
+            throw new Error(400);
         }
-        return true;
     }
 
-    static saveToDatabase(value) {
-        console.log('saveToDatabase: ', value, storage.get("purchases"));
-        storage.add("purchases", value);
+    // check for duplicates in shopping cart
+    static checkForCartDuplicates(shoppingCart) {
+        const cartItemIds = shoppingCart.map((item) => item.itemId);
+        const uniqueItems = new Set(cartItemIds);
+        if (uniqueItems.size !== shoppingCart.length) {
+            throw new Error(400);
+        }
+    }
+
+    static saveToDatabase(purchase) {
+        storage.add("purchases", purchase);
     }
 
     static getPurchaseId() {

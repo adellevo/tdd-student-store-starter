@@ -613,6 +613,295 @@
           "After taxes and fees were applied, the total comes out to 0.00"
         ]
       }
+    },
+    {
+      "id": 21,
+      "name": "adelle",
+      "email": "amv@fb.com",
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 3
+        },
+        {
+          "itemId": 2,
+          "quantity": 2
+        }
+      ],
+      "total": "11.19",
+      "createdAt": "2022-06-30T15:05:09.415Z",
+      "receipt": {
+        "userInfo": {
+          "name": "adelle",
+          "email": "amv@fb.com"
+        },
+        "lines": [
+          "Showing receipt for adelle available at amv@fb.com",
+          "3 total Rice Krispies purchased at a cost of $0.99 for a total cost of $2.97",
+          "2 total Flamin Hot Cheetos purchased at a cost of $1.50 for a total cost of $3.00",
+          "Before taxes, the subtotal was $5.97",
+          "After taxes and fees were applied, the total comes out to $11.19"
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "name": "Adelle",
+      "email": "blah@gmail.com",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 6
+        },
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": "112.50",
+      "createdAt": "2022-06-30T15:10:32.630Z",
+      "receipt": {
+        "userInfo": {
+          "name": "Adelle",
+          "email": "blah@gmail.com"
+        },
+        "lines": [
+          "Showing receipt for Adelle available at blah@gmail.com",
+          "6 total Fruit Medley purchased at a cost of $7.50 for a total cost of $45.00",
+          "2 total Fruit Medley purchased at a cost of $7.50 for a total cost of $15.00",
+          "Before taxes, the subtotal was $60.00",
+          "After taxes and fees were applied, the total comes out to $112.50"
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "name": "Adelle",
+      "email": "blah@gmail.com",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 6
+        },
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": "112.50",
+      "createdAt": "2022-06-30T15:12:05.442Z",
+      "receipt": {
+        "userInfo": {
+          "name": "Adelle",
+          "email": "blah@gmail.com"
+        },
+        "lines": [
+          "Showing receipt for Adelle available at blah@gmail.com",
+          "6 total Fruit Medley purchased at a cost of $7.50 for a total cost of $45.00",
+          "2 total Fruit Medley purchased at a cost of $7.50 for a total cost of $15.00",
+          "Before taxes, the subtotal was $60.00",
+          "After taxes and fees were applied, the total comes out to $112.50"
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "name": "Adelle",
+      "email": "blah@gmail.com",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 6
+        },
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": "112.50",
+      "createdAt": "2022-06-30T15:25:58.695Z",
+      "receipt": {
+        "userInfo": {
+          "name": "Adelle",
+          "email": "blah@gmail.com"
+        },
+        "lines": [
+          "Showing receipt for Adelle available at blah@gmail.com",
+          "6 total Fruit Medley purchased at a cost of $7.50 for a total cost of $45.00",
+          "2 total Fruit Medley purchased at a cost of $7.50 for a total cost of $15.00",
+          "Before taxes, the subtotal was $60.00",
+          "After taxes and fees were applied, the total comes out to $112.50"
+        ]
+      }
+    },
+    {
+      "id": 25,
+      "name": "Adelle",
+      "email": "blah@gmail.com",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 6
+        },
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": "112.50",
+      "createdAt": "2022-06-30T15:26:03.525Z",
+      "receipt": {
+        "userInfo": {
+          "name": "Adelle",
+          "email": "blah@gmail.com"
+        },
+        "lines": [
+          "Showing receipt for Adelle available at blah@gmail.com",
+          "6 total Fruit Medley purchased at a cost of $7.50 for a total cost of $45.00",
+          "2 total Fruit Medley purchased at a cost of $7.50 for a total cost of $15.00",
+          "Before taxes, the subtotal was $60.00",
+          "After taxes and fees were applied, the total comes out to $112.50"
+        ]
+      }
+    },
+    {
+      "id": 26,
+      "name": "Adelle",
+      "email": "blah@gmail.com",
+      "order": [
+        {
+          "itemId": 5,
+          "quantity": 6
+        },
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": "112.50",
+      "createdAt": "2022-06-30T16:22:08.168Z",
+      "receipt": {
+        "userInfo": {
+          "name": "Adelle",
+          "email": "blah@gmail.com"
+        },
+        "lines": [
+          "Showing receipt for Adelle available at blah@gmail.com",
+          "6 total Fruit Medley purchased at a cost of $7.50 for a total cost of $45.00",
+          "2 total Fruit Medley purchased at a cost of $7.50 for a total cost of $15.00",
+          "Before taxes, the subtotal was $60.00",
+          "After taxes and fees were applied, the total comes out to $112.50"
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "name": "Adelle",
+      "email": "blah@gmail.com",
+      "order": [
+        {
+          "itemId": 4,
+          "quantity": 6
+        },
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": "64.69",
+      "createdAt": "2022-06-30T16:24:34.106Z",
+      "receipt": {
+        "userInfo": {
+          "name": "Adelle",
+          "email": "blah@gmail.com"
+        },
+        "lines": [
+          "Showing receipt for Adelle available at blah@gmail.com",
+          "6 total Coconut Water purchased at a cost of $3.25 for a total cost of $19.50",
+          "2 total Fruit Medley purchased at a cost of $7.50 for a total cost of $15.00",
+          "Before taxes, the subtotal was $34.50",
+          "After taxes and fees were applied, the total comes out to $64.69"
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "name": "Adelle",
+      "email": "blah@gmail.com",
+      "order": [
+        {
+          "itemId": 4,
+          "quantity": 6
+        },
+        {
+          "itemId": 5,
+          "quantity": 2
+        }
+      ],
+      "total": "64.69",
+      "createdAt": "2022-06-30T16:24:41.429Z",
+      "receipt": {
+        "userInfo": {
+          "name": "Adelle",
+          "email": "blah@gmail.com"
+        },
+        "lines": [
+          "Showing receipt for Adelle available at blah@gmail.com",
+          "6 total Coconut Water purchased at a cost of $3.25 for a total cost of $19.50",
+          "2 total Fruit Medley purchased at a cost of $7.50 for a total cost of $15.00",
+          "Before taxes, the subtotal was $34.50",
+          "After taxes and fees were applied, the total comes out to $64.69"
+        ]
+      }
+    },
+    {
+      "id": 29,
+      "name": "adelle",
+      "email": "amv@fb.com",
+      "order": [],
+      "total": "0.00",
+      "createdAt": "2022-06-30T16:39:48.301Z",
+      "receipt": {
+        "userInfo": {
+          "name": "adelle",
+          "email": "amv@fb.com"
+        },
+        "lines": [
+          "Showing receipt for adelle available at amv@fb.com",
+          "Before taxes, the subtotal was $0.00",
+          "After taxes and fees were applied, the total comes out to $0.00"
+        ]
+      }
+    },
+    {
+      "id": 30,
+      "order": [
+        {
+          "itemId": 1,
+          "quantity": 3
+        },
+        {
+          "itemId": 2,
+          "quantity": 3
+        },
+        {
+          "itemId": 3,
+          "quantity": 2
+        }
+      ],
+      "total": "25.22",
+      "createdAt": "2022-06-30T16:40:39.850Z",
+      "receipt": {
+        "userInfo": {},
+        "lines": [
+          "Showing receipt for undefined available at undefined",
+          "3 total Rice Krispies purchased at a cost of $0.99 for a total cost of $2.97",
+          "3 total Flamin Hot Cheetos purchased at a cost of $1.50 for a total cost of $4.50",
+          "2 total Cinnamon Rolls purchased at a cost of $2.99 for a total cost of $5.98",
+          "Before taxes, the subtotal was $13.45",
+          "After taxes and fees were applied, the total comes out to $25.22"
+        ]
+      }
     }
   ]
 }

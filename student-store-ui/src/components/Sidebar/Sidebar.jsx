@@ -16,7 +16,6 @@ export default function Sidebar({
   handleOnToggle,
   isCheckedOut,
   setCheckedOut,
-  // purchase,
   receipt,
 }) {
   const getProductName = (productId) => {
@@ -78,21 +77,7 @@ export default function Sidebar({
             handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
             setCheckedOut={setCheckedOut}
           />
-          {/* {console.log(receipt)} */}
-          <CheckoutSuccess
-            // purchase={purchase}
-            receipt={receipt}
-            shoppingCart={shoppingCart}
-            checkoutForm={checkoutForm}
-            getProductName={getProductName}
-            getProductPrice={getProductPrice}
-            calculateCost={calculateCost}
-            calculateSubtotal={calculateSubtotal}
-            calculateTaxes={calculateTaxes}
-            calculateTotal={calculateTotal}
-            isCheckedOut={isCheckedOut}
-            setCheckedOut={setCheckedOut}
-          />
+          <CheckoutSuccess receipt={receipt} isCheckedOut={isCheckedOut} />
         </>
       )}
     </section>

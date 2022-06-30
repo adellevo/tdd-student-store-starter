@@ -2,9 +2,7 @@ import React from "react";
 
 export default function CheckoutSuccess({
   receipt,
-  checkoutForm,
   isCheckedOut,
-  setCheckedOut,
 }) {
   return (
     <div className="checkout-success">

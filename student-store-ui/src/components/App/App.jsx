@@ -99,13 +99,12 @@ export default function App() {
     } else if (name == "email") {
       setCheckoutForm({ ...checkoutForm, email: value });
     }
-    // console.log(checkoutForm);
+ 
   };
 
   const handleOnSubmitCheckoutForm = (event) => {
     event.preventDefault();
-    // console.log(checkoutForm);
-    // handleOnCheckoutFormChange(checkoutForm.name, checkoutForm.email);
+  
     axios
       .post("http://localhost:3001/store", {
         user: {
@@ -115,22 +114,15 @@ export default function App() {
         shoppingCart: shoppingCart,
       })
       .then((response) => {
-        // console.log("hiiii: ", response.data.purchase.receipt);
-        // setPurchase(response.purchase);
-        // response.receipt
-        // console.log(response.data.purchase.receipt)
         setReceipt(response.data.purchase.receipt);
-        // console.log(receipt);
         setCheckedOut(true);
-        // setShoppingCart([]);
-        // setCheckoutForm({});
       })
       .catch((err) => {
         setError(err);
         console.log(error);
       });
 
-    // setCheckedOut(true);
+  
     setShoppingCart([]);
     setCheckoutForm({});
   };
